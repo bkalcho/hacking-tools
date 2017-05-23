@@ -18,9 +18,9 @@ def subnet_calculator():
             a = ip_address.split('.')
             # Take into account just IP addresses of class A, B and C.
             # Also discard localhost and autoconfig IP address (169.254...)
-            if (len(a) == 4) and (1 <= int(a[0]) <= 223) and (int(a[0]) != 127)
-                    and (int(a[0]) != 169 or int(a[1]) != 254)
-                    and (0 <= int(a[1]) <= 255 and 0 <= int(a[2]) <= 255
+            if (len(a) == 4) and (1 <= int(a[0]) <= 223) and (int(a[0]) != 127) \
+                    and (int(a[0]) != 169 or int(a[1]) != 254) \
+                    and (0 <= int(a[1]) <= 255 and 0 <= int(a[2]) <= 255 \
                     and 0 <= int(a[3]) <= 255):
                 break
             
@@ -37,8 +37,8 @@ def subnet_calculator():
             # Check Subnet Mask octets
             b = subnet_mask.split('.')
             
-            if (len(b) == 4) and (int(b[0]) == 255) and (int(b[1]) in masks)
-                    and (int(b[2]) in masks) and (int(b[3]) in masks)
+            if (len(b) == 4) and (int(b[0]) == 255) and (int(b[1]) in masks) \
+                    and (int(b[2]) in masks) and (int(b[3]) in masks) \
                     and (int(b[0]) >= int(b[1]) >= int(b[2]) >= int(b[3])):
                 break
             
